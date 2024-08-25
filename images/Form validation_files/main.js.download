@@ -1,0 +1,29 @@
+
+
+const username= document.querySelector("#username")
+const email= document.querySelector("#email")
+const password= document.querySelector("#password")
+const form= document.querySelector("#form")
+
+const showError =(input,message) =>{
+  
+    let parentElement = input.parentElement;
+
+    parentElement.classList ='form-control error';
+}
+
+const checkEmpty =(elements)=>{
+
+    elements.forEach( (element)=> {
+        if(element.value === ''){
+            showError(Element, 'Input required')
+        }
+    });
+
+}
+
+form.addEventListener("submit" , (event)=>{
+    event.preventDefault();
+
+    checkEmpty([username,email,password])
+})
